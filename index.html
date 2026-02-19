@@ -5,10 +5,322 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaShop</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <h1>NovaShop</h1>
+    <!-- Simple announcement bar (common in real stores) -->
+    <div class="announce" role="note">
+      <div class="container announce-inner">
+        <p>
+          Free shipping on orders $50+ • 30-day returns • Fictional store for class project
+        </p>
+      </div>
+    </div>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="NovaCart home">
+          <span class="brand-mark">N</span>
+          <span class="brand-name">NovaCart</span>
+        </a>
+
+        <!-- Search is a real “homepage” element and feels like student completeness -->
+        <form class="search" action="#" method="get" aria-label="Search products">
+          <label class="sr-only" for="q">Search</label>
+          <input id="q" name="q" type="search" placeholder="Search: watch, hoodie, lamp..." />
+          <button type="submit" class="search-btn" aria-label="Submit search">⌕</button>
+        </form>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#categories">Categories</a>
+          <a href="#products">Best Sellers</a>
+          <a href="#why">Why Us</a>
+          <a href="#footer">Support</a>
+        </nav>
+
+        <div class="header-actions" aria-label="Header actions">
+          <a class="icon-btn" href="#" aria-label="Account">
+            <span aria-hidden="true">👤</span>
+          </a>
+          <a class="icon-btn" href="#" aria-label="Cart">
+            <span aria-hidden="true">🛒</span>
+            <span class="cart-badge" aria-label="2 items in cart">2</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" aria-label="Homepage hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">WEB DESIGN ASSIGNMENT • RESPONSIVE HOMEPAGE</p>
+            <h1>Everyday essentials with a clean, modern vibe.</h1>
+            <p class="subhead">
+              NovaCart is a fictional store concept: minimal products, clear layout, and strong mobile-first design.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#products">Shop Best Sellers</a>
+              <a class="btn btn-ghost" href="#categories">Explore Categories</a>
+            </div>
+
+            <!-- Real stores show quick benefits -->
+            <div class="trust-row">
+              <div class="trust-item"><span class="trust-icon">⚡</span><span>Fast shipping</span></div>
+              <div class="trust-item"><span class="trust-icon">↩</span><span>Easy returns</span></div>
+              <div class="trust-item"><span class="trust-icon">🔒</span><span>Secure checkout</span></div>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <img
+              src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=70"
+              alt="Minimal product display on a clean desk"
+              loading="lazy"
+            />
+            <div class="hero-card">
+              <p class="hero-card-title">Featured Item</p>
+              <p class="hero-card-name">NovaWatch S1</p>
+              <p class="hero-card-price">$129 <span class="muted">• Limited stock</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Small promo strip (makes it feel like a real store homepage) -->
+      <section class="promo" aria-label="Promo strip">
+        <div class="container promo-grid">
+          <div class="promo-item">
+            <p class="promo-title">Student Deal</p>
+            <p class="muted">Use code <strong>HUNTER10</strong> (fictional) for 10% off</p>
+          </div>
+          <div class="promo-item">
+            <p class="promo-title">New Drop Friday</p>
+            <p class="muted">Fresh accessories + desk setup items</p>
+          </div>
+          <div class="promo-item">
+            <p class="promo-title">Support</p>
+            <p class="muted">Email + live chat (mock links)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATEGORIES -->
+      <section class="section" id="categories">
+        <div class="container section-head">
+          <h2>Shop by category</h2>
+          <p class="muted">This section helps users browse quickly.</p>
+        </div>
+
+        <div class="container category-grid">
+          <a class="tile" href="#" aria-label="Shop Accessories">
+            <div class="tile-top">
+              <h3>Accessories</h3>
+              <p class="muted">Watches, bracelets, wallets</p>
+            </div>
+            <div class="tile-badge">Popular</div>
+          </a>
+
+          <a class="tile" href="#" aria-label="Shop Streetwear">
+            <div class="tile-top">
+              <h3>Streetwear</h3>
+              <p class="muted">Hoodies, tees, joggers</p>
+            </div>
+            <div class="tile-badge">New</div>
+          </a>
+
+          <a class="tile" href="#" aria-label="Shop Tech">
+            <div class="tile-top">
+              <h3>Tech</h3>
+              <p class="muted">Audio, gadgets, cables</p>
+            </div>
+            <div class="tile-badge">Hot</div>
+          </a>
+
+          <a class="tile" href="#" aria-label="Shop Home">
+            <div class="tile-top">
+              <h3>Home</h3>
+              <p class="muted">Lighting, desk, décor</p>
+            </div>
+            <div class="tile-badge">Clean</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section class="section" id="products">
+        <div class="container section-head products-head">
+          <div>
+            <h2>Best sellers</h2>
+            <p class="muted">Product cards include price, rating, and a clear call-to-action.</p>
+          </div>
+
+          <!-- "Sort" select makes it feel complete (still HTML only) -->
+          <div class="sort">
+            <label for="sort" class="muted">Sort:</label>
+            <select id="sort" name="sort" aria-label="Sort products (visual only)">
+              <option>Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Best Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="container product-grid">
+          <article class="product-card">
+            <div class="product-media">
+              <img
+                src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=1200&q=70"
+                alt="Minimal wristwatch product photo"
+                loading="lazy"
+              />
+              <span class="tag">Best Seller</span>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">NovaWatch S1</h3>
+              <p class="product-meta muted">Stainless • Water resistant</p>
+              <p class="rating" aria-label="Rated 4.8 out of 5">★★★★★ <span class="muted">(4.8)</span></p>
+              <div class="product-row">
+                <span class="price">$129</span>
+                <a class="btn btn-small" href="#">Add to cart</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img
+                src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=70"
+                alt="Bag on a clean desk"
+                loading="lazy"
+              />
+              <span class="tag tag-alt">New</span>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Creator Sling Bag</h3>
+              <p class="product-meta muted">Compact • Everyday carry</p>
+              <p class="rating" aria-label="Rated 4.6 out of 5">★★★★☆ <span class="muted">(4.6)</span></p>
+              <div class="product-row">
+                <span class="price">$49</span>
+                <a class="btn btn-small" href="#">Add to cart</a>
+              </div>
+            </div>
+          </article>
+        
+          <article class="product-card">
+            <div class="product-media">
+              <img
+                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=70"
+                alt="Minimal desk setup with a lamp"
+                loading="lazy"
+              />
+              <span class="tag tag-alt">Trending</span>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Desk Glow Lamp</h3>
+              <p class="product-meta muted">Warm light • Adjustable</p>
+              <p class="rating" aria-label="Rated 4.5 out of 5">★★★★☆ <span class="muted">(4.5)</span></p>
+              <div class="product-row">
+                <span class="price">$39</span>
+                <a class="btn btn-small" href="#">Add to cart</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- WHY US (student completeness section) -->
+      <section class="section" id="why">
+        <div class="container section-head">
+          <h2>Why NovaCart?</h2>
+          <p class="muted">Clear value props and a little personality goes a long way.</p>
+        </div>
+
+        <div class="container why-grid">
+          <div class="why-card">
+            <h3>Mobile-first layout</h3>
+            <p class="muted">
+              The page starts optimized for phones, then scales up with tablet/desktop breakpoints.
+            </p>
+          </div>
+          <div class="why-card">
+            <h3>Accessible choices</h3>
+            <p class="muted">
+              Semantic HTML, descriptive alt text, and good contrast for readability.
+            </p>
+          </div>
+          <div class="why-card">
+            <h3>Consistent brand system</h3>
+            <p class="muted">
+              Shared spacing, border radius, button styles, and typography tokens across sections.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="section newsletter">
+        <div class="container newsletter-inner">
+          <div>
+            <h2>Get new drops early</h2>
+            <p class="muted">This form is for layout only (no JS).</p>
+          </div>
+
+          <form class="newsletter-form" action="#" method="get">
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" required />
+            <button class="btn btn-primary" type="submit">Join</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand footer-brand">
+            <span class="brand-mark">N</span>
+            <span class="brand-name">NovaCart</span>
+          </div>
+          <p class="muted">
+            Responsive Web homepage  (mobile/tablet/desktop)
+          </p>
+        
+        </div>
+
+        <div class="footer-cols">
+          <div>
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+          </div>
+          <div>
+            <h4>Help</h4>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Contact</a>
+          </div>
+          <div>
+            <h4>Social</h4>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">X</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="muted">© 2026 NovaCart.</p>
+        <p class="muted">Made for a responsive web design assignment.</p>
+      </div>
+    </footer>
 </body>
 
 </html>
